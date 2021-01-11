@@ -1,25 +1,26 @@
 {
-  "compilerOptions": {      
-    "target": "es2019",                         
-    "module": "commonjs",                     
-    "lib": ["es6"],                           
-    "outDir": "./dist",                        
-    "rootDir": "./",                       
-    "removeComments": true,                
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "lib": ["es6"],
+    "outDir": "./dist",
+    "rootDir": "./",
+    "removeComments": true,
     "typeRoots": [
       "./node_modules/@types",
       "./src/@types"
-    ],                      
-    "esModuleInterop": true,                              
+    ],
+    "esModuleInterop": true,
     "resolveJsonModule":true,
-    "experimentalDecorators": true,        
-    "emitDecoratorMetadata": true,         
-    "skipLibCheck": true,                     
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    //"baseUrl":".",
-    //"paths": {
-    //"@controllers/*":["./src/controllers/*"],
-    // "@models/*":["./src/models/*"]
-    //}  
+    "baseUrl":"./",
+    "paths": {
+       "@config/*":["src/config/*"],
+       "@models/*":["src/modules/*"],
+       "@shared/*":["src/shared/*"]
+    }
   }
 }
