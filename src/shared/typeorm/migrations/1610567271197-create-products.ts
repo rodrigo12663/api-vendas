@@ -7,9 +7,10 @@ export class createProducts1610562749257 implements MigrationInterface {
       columns: [
         {
           name: 'id',
-          type: 'int',
+          type: 'uuid',
           isPrimary: true,
-          generationStrategy: 'increment'
+          generationStrategy: 'uuid',
+          default: 'uuid_generate_v4()'
         },
         {
           name: 'name',
