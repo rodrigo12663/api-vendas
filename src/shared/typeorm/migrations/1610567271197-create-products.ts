@@ -27,12 +27,12 @@ export class createProducts1610562749257 implements MigrationInterface {
           type: 'int'
         },
         {
-          name: 'created_at',
+          name: 'createdAt',
           type: 'timestamp',
           default: 'now()'
         },
         {
-          name: 'update_at',
+          name: 'updateAt',
           type: 'timestamp',
           default: 'now()'
         }
