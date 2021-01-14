@@ -3,21 +3,21 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 @Entity('products')
 class Product {
     @PrimaryGeneratedColumn('uuid')
-    private id:string
+    id:string
 
     @Column()
-    private name:string
+    name:string
 
     @Column('decimal')
-    private price:number
+    price:number
 
     @Column('int')
-    private quantity:number
+    quantity:number
 
-     @CreateDateColumn()
-     private createdAt: Date
+    @CreateDateColumn()
+    createdAt: Date
 
-     @UpdateDateColumn()
-     private updatedAt: Date
+    @UpdateDateColumn()
+    updatedAt: Date
 }
 export default Product
