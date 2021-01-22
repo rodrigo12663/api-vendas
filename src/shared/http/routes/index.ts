@@ -1,8 +1,7 @@
+import ProductRoutes from '@shared/app/routes/ProductRoutes'
 import express from 'express'
 const routes = express.Router()
 
-routes.get('/', (request, response) => {
-  return response.json({ message: 'Hello Dev' })
-})
+routes.use('/products', ProductRoutes)
 
 export default routes

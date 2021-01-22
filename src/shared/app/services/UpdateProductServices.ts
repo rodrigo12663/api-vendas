@@ -28,6 +28,7 @@ class UpdateProductServices {
     product.price = price
     product.quantity = quantity
 
+    await ProductsReporsitory.save(product)
     return product
   }
 }

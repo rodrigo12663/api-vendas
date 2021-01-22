@@ -18,6 +18,6 @@ class Product {
     createdAt: Date
 
     @UpdateDateColumn()
-    updatedAt: Date
+    updateAt: Date
 }
 export default Product

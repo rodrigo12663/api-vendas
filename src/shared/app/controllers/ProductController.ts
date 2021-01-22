@@ -26,7 +26,7 @@ export default class ProductsController {
     const createProduct = new CreateProductService()
     const product = await createProduct.execute({ name, price, quantity })
 
-    return response.json({ product })
+    return response.json(product)
   }
 
   async update (request: Request, response: Response):Promise<Response> {
