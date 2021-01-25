@@ -16,6 +16,7 @@ export default class ProductsController {
   async show (request: Request, response: Response) :Promise<Response> {
     const { id } = request.params
     const showProducts = new ListOneProductServices()
+
     const product = await showProducts.execute({ id })
 
     return response.json({ product })
