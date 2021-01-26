@@ -19,7 +19,6 @@ class UpdateProductServices {
     if (!product) {
       throw new AppError('Product not found')
     }
-
     const productExist = await ProductsReporsitory.findByName(name)
     if (productExist) {
       throw new AppError('there is already one product whit this name')
