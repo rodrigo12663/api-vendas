@@ -24,6 +24,7 @@ class UpdateProductServices {
     if (productExist) {
       throw new AppError('there is already one product whit this name')
     }
+
     product.name = name
     product.price = price
     product.quantity = quantity
