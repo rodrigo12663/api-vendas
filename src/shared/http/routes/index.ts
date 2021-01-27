@@ -1,4 +1,4 @@
-import ProductRoutes from '@shared/app/routes/ProductRoutes'
+import ProductRoutes from '@models/Product/routes/ProductRoutes'
 import express from 'express'
 const routes = express.Router()
 
