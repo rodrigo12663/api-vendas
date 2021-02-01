@@ -1,3 +1,4 @@
+import GenerateToken from '@config/GenerateToken'
 import AppError from '@shared/errors/AppError'
 import { compare } from 'bcryptjs'
 import { getCustomRepository } from 'typeorm'
@@ -8,9 +9,14 @@ interface IRequest {
   password: string;
 
 }
+interface IResponse {
+  user: User;
+  token: string;
+
+}
 
 export default class CreateSessionsService {
-  public async execute ({ email, password }: IRequest): Promise<User> {
+  public async execute ({ email, password }: IRequest): Promise<IResponse > {
     const usersRepository = getCustomRepository(UserReporsitory)
     const user = await usersRepository.findByEmail(email)
 
@@ -22,6 +28,12 @@ export default class CreateSessionsService {
     if (!PasswordConfirmed) {
       throw new AppError('incorrect password combination.', 401)
     }
-    return user
+    const generateToken = new GenerateToken()
+    const token = generateToken.execute(user.id, user.email)
+
+    return {
+      user,
+      token
+    }
   }
 }
