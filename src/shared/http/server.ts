@@ -4,7 +4,7 @@ import 'express-async-errors'
 import cors from 'cors'
 import routes from './routes'
 import '@shared/typeorm'
-import ConfigError from '@shared/errors/ConfigError'
+import ConfigError from '../middlewares/ConfigError'
 
 const configErro = new ConfigError()
 const app = express()
