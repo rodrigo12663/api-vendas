@@ -4,8 +4,8 @@
   "port":5432,
   "username":"postgres",
   "password":"root",
-  "database":"apivenda",
-  "entities":["./src/modules/**/entities/*.ts"],
+  "database":"apivendas",
+  "entities":["./src/modules/Product/**/entities/*.ts"],
     "migrations": ["./src/shared/typeorm/migrations/*.ts"],
     "cli": {
         "migrationsDir": "./src/shared/typeorm/migrations/"
