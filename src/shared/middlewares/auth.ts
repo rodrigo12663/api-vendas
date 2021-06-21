@@ -9,23 +9,19 @@ interface TokenPayload {
   sub: string;
 }
 
-export default function auth (
-  request: Request,
-  response: Response,
-  next:NextFunction) {
-  const authToken = request.headers.authorization
+export default function auth (req:Request, res:Response, next:NextFunction) {
+  const authToken = req.headers.authorization
   const [, token] = authToken.split(' ')
 
   if (!authToken) {
     throw new AppError('token invalid', 401)
   }
-
   try {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const decodedToken = verify(token, AuthConfig.secret)
 
     const { sub } = decodedToken as TokenPayload
-    console.log({ sub })
-    request.user = {
+    req.user = {
       id: sub
     }
 

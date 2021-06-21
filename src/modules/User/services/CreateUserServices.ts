@@ -11,7 +11,7 @@ interface IRequest {
 
 }
 
-class CreateUserService {
+export default class CreateUserService {
   public async execute ({ name, email, password }: IRequest): Promise<User> {
     const usersRepository = getCustomRepository(UserReporsitory)
     const emailExists = await usersRepository.findByEmail(email)
@@ -26,5 +26,3 @@ class CreateUserService {
     return user
   }
 }
-
-export default CreateUserService

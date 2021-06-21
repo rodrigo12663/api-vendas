@@ -1,10 +1,10 @@
 {
   "type":"postgres",
-  "host":"localhost",
+  "host":"database",
   "port":5432,
   "username":"postgres",
   "password":"root",
-  "database":"apivenda",
+  "database":"api-vendas",
   "entities":["./src/modules/**/entities/*.ts"],
     "migrations": ["./src/shared/typeorm/migrations/*.ts"],
     "cli": {

@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "migrations:run": "docker exec d13 npm run typeorm migration:run",
+    "migrations:create": "docker execc d13 npm run typeorm migration:create -n"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

@@ -13,7 +13,7 @@ export default class ProductsController {
     const ListProducts = new ListProductServices()
     const products = await ListProducts.execute()
 
-    return response.json({ products })
+    return response.json(products)
   }
 
   async show (request: Request, response: Response) :Promise<Response> {
